@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Synwit</vendor>
+  <name>SWM32_DFP</name>
+  <description>Synwit 32bit MCU Device Support</description>
+  <url>http://www.synwit.com/pack</url>
+
+  <releases>
+    <release version="2.0.5" date="2023-2-22">
+      remove CSL folder
+    </release>
+  </releases>
+
+  <keywords>                  <!-- keywords for indexing -->
+    <keyword>Synwit</keyword>
+    <keyword>SWM181</keyword>
+    <keyword>SWM190</keyword>
+    <keyword>SWM201</keyword>
+    <keyword>SWM211</keyword>
+    <keyword>SWM260</keyword>
+    <keyword>SWM320</keyword>
+    <keyword>SWM341</keyword>
+  </keywords>
+
+  <devices>
+    <family Dfamily="SWM181 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="48000000"/>
+      <compile   header="CSL\SWM181\CMSIS\DeviceSupport\SWM181.h"/>
+      <debug     svd="SVD\SWM181.svd"/>
+      <description>
+      Synwit SWM181 series
+      - ARM Cortex-M0 running up to 48MHz
+      - From 120 to 248-Kbyte Flash
+      - 16-Kbyte SRAM
+      Peripherals:
+      - Timer: 1 24-bit SysTick, 4 24-bit Timer, 8 PWM
+      - Communication: 4 UART, 2 SPI, 2 I2C, 1 CAN
+      - Analog: 1 12-bit SAR ADC, 1 16-bit SD ADC, 3 Analog Compare
+      - Others: Hardware Divider, Hardware Cordic, 4x25 Segmet LCD Driver, 5-ch DMA
+      </description>
+
+      <!-- *************************  Device 'SWM181x9'  ***************************** -->
+      <device Dname="SWM181x9">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x18000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM181xC.FLM"       start="0x00000000"  size="0x18000"                  default="1"/>
+      </device>
+
+      <!-- *************************  Device 'SWM181xB'  ***************************** -->
+      <device Dname="SWM181xB">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x1E000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM181xC.FLM"       start="0x00000000"  size="0x1E000"                  default="1"/>
+      </device>
+
+      <!-- *************************  Device 'SWM181xC'  ***************************** -->
+      <device Dname="SWM181xC">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x3E000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM181xC.FLM"       start="0x00000000"  size="0x3E000"                  default="1"/>
+      </device>
+    </family>
+
+    <family Dfamily="SWM190 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="64000000"/>
+      <compile   header="CSL\SWM190\CMSIS\DeviceSupport\SWM190.h"/>
+      <debug     svd="SVD\SWM190.svd"/>
+      <description>
+      Synwit SWM190 series
+      - ARM Cortex-M0 running up to 64MHz
+      - 120 Kbyte Flash
+      - 20 Kbyte SRAM
+      Peripherals:
+      - Timer: 1 24-bit SysTick, 8 24-bit Timer, 8 PWM
+      - Communication: 4 UART, 2 SPI, 2 I2C
+      - Analog: 2 12-bit SAR ADC, 3 Analog Compare, 4 Operational Amplifier
+      - Others: Hardware Divider, Hardware Cordic, 4-ch DMA
+      </description>
+
+      <!-- *************************  Device 'SWM190x9'  ***************************** -->
+      <device Dname="SWM190x9">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x18000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM190xC.FLM"       start="0x00000000"  size="0x18000"                  default="1"/>
+      </device>
+
+      <!-- *************************  Device 'SWM190xB'  ***************************** -->
+      <device Dname="SWM190xB">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x1E000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x5000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM190xC.FLM"       start="0x00000000"  size="0x1E000"                  default="1"/>
+      </device>
+    </family>
+
+    <family Dfamily="SWM201 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="60000000"/>
+      <compile   header="CSL\SWM2X1\SWM2X1_StdPeriph_Driver\SWM2X1.h"/>
+      <debug     svd="SVD\SWM201.svd"/>
+      <description>
+      Synwit SWM201 series
+      - ARM Cortex-M0 running up to 60MHz
+      - 32-Kbyte Flash
+      - 8-Kbyte SRAM
+      Peripherals:
+      - Timer: 1 24-bit SysTick, 6 32-bit Timer, 4 PWM
+      - Communication: 2 UART, 1 SPI, 1 I2C
+      - Analog: 1 12-bit SAR ADC, 4 Analog Compare, 3 Operational Amplifier
+      - Others: Hardware Divider, Hardware Cordic
+      </description>
+
+      <!-- *************************  Device 'SWM201x6'  ***************************** -->
+      <device Dname="SWM201x6">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM201x6.FLM"       start="0x00000000"  size="0x8000"                   default="1"/>
+      </device>
+    </family>
+
+    <family Dfamily="SWM211 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="60000000"/>
+      <compile   header="CSL\SWM2X1\SWM2X1_StdPeriph_Driver\SWM2X1.h"/>
+      <debug     svd="SVD\SWM211.svd"/>
+      <description>
+      Synwit SWM211 series
+      - ARM Cortex-M0 running up to 90MHz
+      - 64-Kbyte Flash
+      - 8-Kbyte SRAM
+      Peripherals:
+      - Timer: 1 24-bit SysTick, 7 32-bit Timer, 4 PWM
+      - Communication: 2 UART, 2 SPI, 1 I2C, 1 CAN
+      - Analog: 1 12-bit SAR ADC, 4 Analog Compare, 4 Operational Amplifier
+      - Others: Hardware Divider, Hardware Cordic, MPU LCD Interface
+      </description>
+
+      <!-- *************************  Device 'SWM211x6'  ***************************** -->
+      <device Dname="SWM211x6">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM211x8.FLM"       start="0x00000000"  size="0x8000"                   default="1"/>
+      </device>
+
+      <!-- *************************  Device 'SWM211x8'  ***************************** -->
+      <device Dname="SWM211x8">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x10000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM211x8.FLM"       start="0x00000000"  size="0x10000"                  default="1"/>
+      </device>
+    </family>
+
+    <family Dfamily="SWM260 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="64000000"/>
+      <compile   header="CSL\SWM260\CMSIS\DeviceSupport\SWM260.h"/>
+      <debug     svd="SVD\SWM260.svd"/>
+      <description>
+      Synwit SWM260 series
+      - ARM Cortex-M0 running up to 64MHz
+      - 128 Kbyte Flash
+      - 8 Kbyte SRAM
+      Peripherals:
+      - Timer: 1 24-bit SysTick, 8 32-bit Timer, 8 PWM
+      - Communication: 5 UART, 2 SPI, 1 I2C
+      - Analog: 1 12-bit SAR ADC, 1 Analog Compare, 2 Opam
+      - Others: 4-ch DMA
+      </description>
+
+      <!-- *************************  Device 'SWM260xB'  ***************************** -->
+      <device Dname="SWM260xB">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM260xB.FLM"       start="0x00000000"  size="0x20000"                  default="1"/>
+      </device>
+    </family>
+
+    <family Dfamily="SWM320 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M4" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="120000000"/>
+      <compile   header="CSL\SWM320\CMSIS\DeviceSupport\SWM320.h"/>
+      <debug     svd="SVD\SWM320.svd"/>
+      <description>
+      Synwit SWM320 series
+      - ARM Cortex-M4 running up to 120MHz
+      - 512/256-Kbyte Flash
+      - 128/64 -Kbyte SRAM
+      Peripherals:
+      - Timer: 1 24-bit SysTick, 16 32-bit Timer, 10 PWM, 1 RTC
+      - Communication: 4 UART, 2 SPI, 2 I2C, 2 CAN, 1 SDIO
+      - Analog: 2 12-bit SAR ADC
+      - Others: Hardware CRC, TFT LCD Interface, 4-ch DMA, NOR Flash Interface, SRAM Interface
+      </description>
+
+      <!-- *************************  Device 'SWM320xC'  ***************************** -->
+      <device Dname="SWM320xC">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x10000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM320xE.FLM"       start="0x00000000"  size="0x40000"                  default="1"/>
+      </device>
+
+      <!-- *************************  Device 'SWM320xE'  ***************************** -->
+      <device Dname="SWM320xE">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM320xE.FLM"       start="0x00000000"  size="0x80000"                  default="1"/>
+      </device>
+    </family>
+
+    <family Dfamily="SWM341 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M33" DcoreVersion="r0p1" Ddsp="DSP" Dfpu="SP_FPU" Dmpu="0" Dendian="Little-endian" Dclock="120000000"/>
+      <compile   header="CSL\SWM341\CMSIS\DeviceSupport\SWM341.h"/>
+      <debug     svd="SVD\SWM341.svd"/>
+      <description>
+      Synwit SWM341 series
+      - ARM Cortex-M33 running up to 140MHz
+      - 512-Kbyte Flash
+      - 64 -Kbyte SRAM
+      Peripherals:
+      - Timer: 1 24-bit SysTick, 6 24-bit Timer, 10 PWM, 1 RTC
+      - Communication: 4 UART, 2 SPI, 2 I2C, 2 CAN, 1 SDIO, 1 USB Host/Device
+      - Analog: 2 12-bit SAR ADC, 1 12-bit DAC, 3 Analog Compare, 3 Operational Amplifier
+      - Others: Hardware CRC, Hardware CORDIC, TFT LCD Interface, SDRAM Interface, JPEG Decoder, DMA2D, 4-ch DMA
+      </description>
+
+      <!-- *************************  Device 'SWM341xE'  ***************************** -->
+      <device Dname="SWM341xE">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x10000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM341xE.FLM"       start="0x00000000"  size="0x80000"                  default="1"/>
+      </device>
+    </family>
+  </devices>
+  
+  <conditions>
+    <condition id="Compiler ARM">
+      <require Tcompiler="ARMCC"/>
+    </condition>
+    
+    <condition id="SWM181 Series">
+      <description>Synwit Cortex-M0 SWM181 Device</description>
+      <accept Dname="SWM181x[9BC]"/>
+    </condition>
+
+    <condition id="SWM190 Series">
+      <description>Synwit Cortex-M0 SWM190 Device</description>
+      <accept Dname="SWM190x[9B]"/>
+    </condition>
+
+    <condition id="SWM201 Series">
+      <description>Synwit Cortex-M0 SWM201 Device</description>
+      <accept Dname="SWM201x[6]"/>
+    </condition>
+
+    <condition id="SWM211 Series">
+      <description>Synwit Cortex-M0 SWM211 Device</description>
+      <accept Dname="SWM211x[68]"/>
+    </condition>
+
+    <condition id="SWM260 Series">
+      <description>Synwit Cortex-M0 SWM260 Device</description>
+      <accept Dname="SWM260x[B]"/>
+    </condition>
+
+    <condition id="SWM320 Series">
+      <description>Synwit Cortex-M4 SWM320 Device</description>
+      <accept Dname="SWM320x[CE]"/>
+    </condition>
+
+    <condition id="SWM341 Series">
+      <description>Synwit Cortex-M33 SWM341 Device</description>
+      <accept Dname="SWM341x[E]"/>
+    </condition>
+  </conditions>
+
+  <components>
+  </components>
+</package>
