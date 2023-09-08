@@ -6,8 +6,8 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.0.5" date="2023-2-22">
-      remove CSL folder
+    <release version="2.0.6" date="2023-9-8">
+      add SWM241 support
     </release>
   </releases>
 
@@ -17,6 +17,7 @@
     <keyword>SWM190</keyword>
     <keyword>SWM201</keyword>
     <keyword>SWM211</keyword>
+    <keyword>SWM241</keyword>
     <keyword>SWM260</keyword>
     <keyword>SWM320</keyword>
     <keyword>SWM341</keyword>
@@ -147,6 +148,25 @@
       </device>
     </family>
 
+    <family Dfamily="SWM241 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="48000000"/>
+      <compile   header="CSL\SWM241\CMSIS\DeviceSupport\SWM241.h"/>
+      <debug     svd="SVD\SWM241.svd"/>
+      <description>
+      Synwit SWM241 series
+      - ARM Cortex-M0 running up to 48MHz
+      - 128 Kbyte Flash
+      - 8 Kbyte SRAM
+      </description>
+
+      <!-- *************************  Device 'SWM241xB'  ***************************** -->
+      <device Dname="SWM241xB">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM241xB.FLM"       start="0x00000000"  size="0x20000"                  default="1"/>
+      </device>
+    </family>
+
     <family Dfamily="SWM260 Series" Dvendor="Synwit">
       <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="64000000"/>
       <compile   header="CSL\SWM260\CMSIS\DeviceSupport\SWM260.h"/>
@@ -250,6 +270,11 @@
     <condition id="SWM211 Series">
       <description>Synwit Cortex-M0 SWM211 Device</description>
       <accept Dname="SWM211x[68]"/>
+    </condition>
+
+    <condition id="SWM241 Series">
+      <description>Synwit Cortex-M0 SWM241 Device</description>
+      <accept Dname="SWM241x[B]"/>
     </condition>
 
     <condition id="SWM260 Series">
