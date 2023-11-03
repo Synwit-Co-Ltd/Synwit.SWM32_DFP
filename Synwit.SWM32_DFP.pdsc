@@ -6,7 +6,7 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.0.6" date="2023-9-8">
+    <release version="2.0.7" date="2023-11-3">
       add SWM241 support
     </release>
   </releases>
@@ -228,7 +228,7 @@
       <debug     svd="SVD\SWM341.svd"/>
       <description>
       Synwit SWM341 series
-      - ARM Cortex-M33 running up to 140MHz
+      - ArmChina STAR-MC1 running up to 140MHz
       - 512-Kbyte Flash
       - 64 -Kbyte SRAM
       Peripherals:
@@ -288,7 +288,7 @@
     </condition>
 
     <condition id="SWM341 Series">
-      <description>Synwit Cortex-M33 SWM341 Device</description>
+      <description>Synwit STAR-MC1 SWM341 Device</description>
       <accept Dname="SWM341x[E]"/>
     </condition>
   </conditions>
