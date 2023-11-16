@@ -6,13 +6,14 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.0.7" date="2023-11-3">
-      add SWM241 support
+    <release version="2.0.8" date="2023-11-16">
+      add SWM166 support
     </release>
   </releases>
 
   <keywords>                  <!-- keywords for indexing -->
     <keyword>Synwit</keyword>
+    <keyword>SWM166</keyword>
     <keyword>SWM181</keyword>
     <keyword>SWM190</keyword>
     <keyword>SWM201</keyword>
@@ -24,6 +25,30 @@
   </keywords>
 
   <devices>
+    <family Dfamily="SWM166 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="60000000"/>
+      <compile   header="CSL\SWM166\SWM166_StdPeriph_Driver\SWM166.h"/>
+      <debug     svd="SVD\SWM166.svd"/>
+      <description>
+      Synwit SWM166 series
+      - ARM Cortex-M0 running up to 90MHz
+      - 64-Kbyte Flash
+      - 8-Kbyte SRAM
+      Peripherals:
+      - Timer: 1 24-bit SysTick, 7 32-bit Timer, 4 PWM
+      - Communication: 2 UART, 2 SPI, 1 I2C, 1 CAN
+      - Analog: 1 12-bit SAR ADC, 4 Analog Compare, 4 Operational Amplifier
+      - Others: Hardware Divider, Hardware Cordic, MPU LCD Interface
+      </description>
+
+      <!-- *************************  Device 'SWM166x8'  ***************************** -->
+      <device Dname="SWM166x8">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x10000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM166x8.FLM"       start="0x00000000"  size="0x10000"                  default="1"/>
+      </device>
+    </family>
+    
     <family Dfamily="SWM181 Series" Dvendor="Synwit">
       <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="48000000"/>
       <compile   header="CSL\SWM181\CMSIS\DeviceSupport\SWM181.h"/>
