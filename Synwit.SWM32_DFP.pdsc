@@ -6,8 +6,8 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.0.9" date="2024-3-22">
-      SWM341 add SFC flash algorithm
+    <release version="2.1.0" date="2024-4-2">
+      update SWM181 flash algorithm
     </release>
   </releases>
 
