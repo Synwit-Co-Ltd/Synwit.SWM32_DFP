@@ -6,7 +6,7 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.1.1" date="2024-8-5">
+    <release version="2.1.2" date="2024-8-15">
       update SWM341 flash algorithm
     </release>
   </releases>
