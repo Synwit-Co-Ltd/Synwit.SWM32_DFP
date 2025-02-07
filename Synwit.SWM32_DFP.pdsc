@@ -6,8 +6,8 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.1.4" date="2024-11-6">
-      update SWM341 flash algorithm
+    <release version="2.1.5" date="2025-2-7">
+      add SWM261 support
     </release>
   </releases>
 
@@ -21,6 +21,7 @@
     <keyword>SWM221</keyword>
     <keyword>SWM241</keyword>
     <keyword>SWM260</keyword>
+    <keyword>SWM261</keyword>
     <keyword>SWM320</keyword>
     <keyword>SWM341</keyword>
   </keywords>
@@ -233,6 +234,25 @@
         <memory     id="IROM1"                      start="0x00000000"  size="0x20000"    startup="1"   default="1"/>
         <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
         <algorithm  name="Flash\SWM260xB.FLM"       start="0x00000000"  size="0x20000"                  default="1"/>
+      </device>
+    </family>
+
+    <family Dfamily="SWM261 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="72000000"/>
+      <compile   header="CSL\SWM261\CMSIS\DeviceSupport\SWM261.h"/>
+      <debug     svd="SVD\SWM261.svd"/>
+      <description>
+      Synwit SWM261 series
+      - ARM Cortex-M0 running up to 72MHz
+      - 128 Kbyte Flash
+      - 8 Kbyte SRAM
+      </description>
+
+      <!-- *************************  Device 'SWM261xB'  ***************************** -->
+      <device Dname="SWM261xB">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM261xB.FLM"       start="0x00000000"  size="0x20000"                  default="1"/>
       </device>
     </family>
 
