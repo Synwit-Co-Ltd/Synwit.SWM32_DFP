@@ -6,8 +6,8 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.1.6" date="2025-7-23">
-      update SWM211 flash algorithm
+    <release version="2.2.0" date="2026-1-4">
+      add SWM330 support
     </release>
   </releases>
 
