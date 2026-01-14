@@ -6,7 +6,7 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.2.0" date="2026-1-4">
+    <release version="2.2.1" date="2026-1-14">
       add SWM330 support
     </release>
   </releases>
@@ -192,6 +192,7 @@
         <memory     id="IROM1"                      start="0x00000000"  size="0x20000"    startup="1"   default="1"/>
         <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
         <algorithm  name="Flash\SWM221xB.FLM"       start="0x00000000"  size="0x20000"                  default="1"/>
+        <algorithm  name="Flash\SWM221_QSPI0_NOR.FLM"   start="0x70000000"  size="0x1000000"                default="1"/>
       </device>
     </family>
 
