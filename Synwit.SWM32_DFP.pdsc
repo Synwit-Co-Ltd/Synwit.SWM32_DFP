@@ -6,7 +6,7 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.2.1" date="2026-1-14">
+    <release version="2.2.2" date="2026-1-15">
       add SWM330 support
     </release>
   </releases>
