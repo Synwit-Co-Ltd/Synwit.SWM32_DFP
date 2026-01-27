@@ -6,8 +6,8 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.2.2" date="2026-1-15">
-      add SWM330 support
+    <release version="2.2.3" date="2026-1-27">
+      add SWM231 support
     </release>
   </releases>
 
@@ -19,6 +19,7 @@
     <keyword>SWM201</keyword>
     <keyword>SWM211</keyword>
     <keyword>SWM221</keyword>
+    <keyword>SWM231</keyword>
     <keyword>SWM241</keyword>
     <keyword>SWM260</keyword>
     <keyword>SWM261</keyword>
@@ -196,6 +197,25 @@
       </device>
     </family>
 
+    <family Dfamily="SWM231 Series" Dvendor="Synwit">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="48000000"/>
+      <compile   header="CSL\SWM231\CMSIS\DeviceSupport\SWM231.h"/>
+      <debug     svd="SVD\SWM231.svd"/>
+      <description>
+      Synwit SWM231 series
+      - ARM Cortex-M0 running up to 48MHz
+      - 32 Kbyte Flash
+      - 4 Kbyte SRAM
+      </description>
+
+      <!-- *************************  Device 'SWM231x6'  ***************************** -->
+      <device Dname="SWM231x6">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x8000"     startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x1000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM231x6.FLM"       start="0x00000000"  size="0x8000"                   default="1"/>
+      </device>
+    </family>
+    
     <family Dfamily="SWM241 Series" Dvendor="Synwit">
       <processor Dcore="Cortex-M0" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="48000000"/>
       <compile   header="CSL\SWM241\CMSIS\DeviceSupport\SWM241.h"/>
@@ -365,6 +385,11 @@
     <condition id="SWM211 Series">
       <description>Synwit Cortex-M0 SWM211 Device</description>
       <accept Dname="SWM211x[68]"/>
+    </condition>
+
+    <condition id="SWM231 Series">
+      <description>Synwit Cortex-M0 SWM231 Device</description>
+      <accept Dname="SWM231x[6]"/>
     </condition>
 
     <condition id="SWM241 Series">
