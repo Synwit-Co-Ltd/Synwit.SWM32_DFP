@@ -6,7 +6,7 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.2.3" date="2026-1-27">
+    <release version="2.2.4" date="2026-2-9">
       add SWM231 support
     </release>
   </releases>

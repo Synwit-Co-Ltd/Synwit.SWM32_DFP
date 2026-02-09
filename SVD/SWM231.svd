@@ -563,15 +563,15 @@
           <access>read-write</access>
           <fields>
             <field>
-              <name>ST</name>
-              <description>ST field</description>
+              <name>IF</name>
+              <description>IF field</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
-              <name>IF</name>
-              <description>IF field</description>
+              <name>ST</name>
+              <description>ST field</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -3737,7 +3737,7 @@
       <baseAddress>0x40041000</baseAddress>
       <addressBlock>
         <offset>0x00000000</offset>
-        <size>0x000014</size>
+        <size>0x000018</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
@@ -3860,6 +3860,13 @@
               <access>read-write</access>
             </field>
             <field>
+              <name>SMPDLY</name>
+              <description>SMPDLY field</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
               <name>LSBF</name>
               <description>LSBF field</description>
               <bitOffset>28</bitOffset>
@@ -3870,6 +3877,20 @@
               <name>NSYNC</name>
               <description>NSYNC field</description>
               <bitOffset>29</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>BIDIOE</name>
+              <description>BIDIOE field</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>BIDI</name>
+              <description>BIDI field</description>
+              <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
@@ -4118,6 +4139,56 @@
               <description>CSRISE field</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPIMCR</name>
+          <description>SPIMCR register</description>
+          <addressOffset>0x000014</addressOffset>
+          <access>read-write</access>
+          <fields>
+            <field>
+              <name>EN</name>
+              <description>EN field</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>WIDTH</name>
+              <description>WIDTH field</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>RTYPE</name>
+              <description>RTYPE field</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DUMMY</name>
+              <description>DUMMY field</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>SSN</name>
+              <description>SSN field</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>RDLEN</name>
+              <description>RDLEN field</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>12</bitWidth>
               <access>read-write</access>
             </field>
           </fields>
@@ -5820,7 +5891,7 @@
       <baseAddress>0x40043000</baseAddress>
       <addressBlock>
         <offset>0x00000000</offset>
-        <size>0x0000D4</size>
+        <size>0x000100</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
@@ -5834,13 +5905,13 @@
               <name>MODE</name>
               <description>MODE field</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
+              <bitWidth>2</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RESET</name>
               <description>RESET field</description>
-              <bitOffset>1</bitOffset>
+              <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
@@ -5922,6 +5993,27 @@
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
+            <field>
+              <name>SINCOS</name>
+              <description>SINCOS field</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CLARK3</name>
+              <description>CLARK3 field</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>IPARK2</name>
+              <description>IPARK2 field</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
           </fields>
         </register>
         <register>
@@ -5969,6 +6061,27 @@
               <name>SVPWM</name>
               <description>SVPWM field</description>
               <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>SINCOS</name>
+              <description>SINCOS field</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CLARK3</name>
+              <description>CLARK3 field</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>IPARK2</name>
+              <description>IPARK2 field</description>
+              <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
@@ -6030,6 +6143,27 @@
               <access>read-write</access>
             </field>
             <field>
+              <name>SINCOS</name>
+              <description>SINCOS field</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CLARK3</name>
+              <description>CLARK3 field</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>IPARK2</name>
+              <description>IPARK2 field</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
               <name>CLARKOF</name>
               <description>CLARKOF field</description>
               <bitOffset>16</bitOffset>
@@ -6067,26 +6201,16 @@
           </fields>
         </register>
         <register>
-          <name>CLARKIAB</name>
-          <description>CLARKIAB register</description>
+          <name>CLARKIA</name>
+          <description>CLARKIA register</description>
           <addressOffset>0x000014</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>IA</name>
-              <description>IA field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IB</name>
-              <description>IB field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
+        </register>
+        <register>
+          <name>CLARKIB</name>
+          <description>CLARKIB register</description>
+          <addressOffset>0x000018</addressOffset>
+          <access>read-write</access>
         </register>
         <register>
           <name>CLARKIC</name>
@@ -6095,483 +6219,333 @@
           <access>read-write</access>
         </register>
         <register>
-          <name>CLARKOAB</name>
-          <description>CLARKOAB register</description>
+          <name>CLARKOA</name>
+          <description>CLARKOA register</description>
           <addressOffset>0x000020</addressOffset>
           <access>read-only</access>
-          <fields>
-            <field>
-              <name>OA</name>
-              <description>OA field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>OB</name>
-              <description>OB field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-only</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PARKIAB</name>
-          <description>PARKIAB register</description>
+          <name>CLARKOB</name>
+          <description>CLARKOB register</description>
+          <addressOffset>0x000024</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PARKIA</name>
+          <description>PARKIA register</description>
           <addressOffset>0x000028</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>IA</name>
-              <description>IA field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IB</name>
-              <description>IB field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PARKRAD</name>
-          <description>PARKRAD register</description>
+          <name>PARKIB</name>
+          <description>PARKIB register</description>
+          <addressOffset>0x00002C</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PARKSIN</name>
+          <description>PARKSIN register</description>
           <addressOffset>0x000030</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>SIN</name>
-              <description>SIN field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>COS</name>
-              <description>COS field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PARKODQ</name>
-          <description>PARKODQ register</description>
+          <name>PARKCOS</name>
+          <description>PARKCOS register</description>
+          <addressOffset>0x000034</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PARKOD</name>
+          <description>PARKOD register</description>
           <addressOffset>0x000038</addressOffset>
           <access>read-only</access>
-          <fields>
-            <field>
-              <name>OD</name>
-              <description>OD field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>OQ</name>
-              <description>OQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-only</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PIDIDQ</name>
-          <description>PIDIDQ register</description>
+          <name>PARKOQ</name>
+          <description>PARKOQ register</description>
+          <addressOffset>0x00003C</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PIDID</name>
+          <description>PIDID register</description>
           <addressOffset>0x000044</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>ID</name>
-              <description>ID field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IQ</name>
-              <description>IQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PIDREF</name>
-          <description>PIDREF register</description>
+          <name>PIDIQ</name>
+          <description>PIDIQ register</description>
+          <addressOffset>0x000048</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PIDREFD</name>
+          <description>PIDREFD register</description>
           <addressOffset>0x00004C</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>ID</name>
-              <description>ID field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IQ</name>
-              <description>IQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PIDMAX</name>
-          <description>PIDMAX register</description>
+          <name>PIDREFQ</name>
+          <description>PIDREFQ register</description>
+          <addressOffset>0x000050</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PIDMAXD</name>
+          <description>PIDMAXD register</description>
           <addressOffset>0x000054</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>ID</name>
-              <description>ID field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IQ</name>
-              <description>IQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PIDMIN</name>
-          <description>PIDMIN register</description>
+          <name>PIDMAXQ</name>
+          <description>PIDMAXQ register</description>
+          <addressOffset>0x000058</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PIDMIND</name>
+          <description>PIDMIND register</description>
           <addressOffset>0x00005C</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>ID</name>
-              <description>ID field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IQ</name>
-              <description>IQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PIDKP</name>
-          <description>PIDKP register</description>
+          <name>PIDMINQ</name>
+          <description>PIDMINQ register</description>
+          <addressOffset>0x000060</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PIDKPD</name>
+          <description>PIDKPD register</description>
           <addressOffset>0x000064</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>ID</name>
-              <description>ID field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>14</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IQ</name>
-              <description>IQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>14</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PIDKI</name>
-          <description>PIDKI register</description>
+          <name>PIDKPQ</name>
+          <description>PIDKPQ register</description>
+          <addressOffset>0x000068</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PIDKID</name>
+          <description>PIDKID register</description>
           <addressOffset>0x00006C</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>ID</name>
-              <description>ID field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>14</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IQ</name>
-              <description>IQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>14</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PIDLERR</name>
-          <description>PIDLERR register</description>
+          <name>PIDKIQ</name>
+          <description>PIDKIQ register</description>
+          <addressOffset>0x000070</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PIDLED</name>
+          <description>PIDLED register</description>
           <addressOffset>0x000074</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>ID</name>
-              <description>ID field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IQ</name>
-              <description>IQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PIDLOUT</name>
-          <description>PIDLOUT register</description>
+          <name>PIDLEQ</name>
+          <description>PIDLEQ register</description>
+          <addressOffset>0x000078</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PIDLOD</name>
+          <description>PIDLOD register</description>
           <addressOffset>0x00007C</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>OD</name>
-              <description>OD field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>OQ</name>
-              <description>OQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PIDODQ</name>
-          <description>PIDODQ register</description>
+          <name>PIDLOQ</name>
+          <description>PIDLOQ register</description>
+          <addressOffset>0x000080</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PIDOD</name>
+          <description>PIDOD register</description>
           <addressOffset>0x000084</addressOffset>
           <access>read-only</access>
-          <fields>
-            <field>
-              <name>OD</name>
-              <description>OD field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>OQ</name>
-              <description>OQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-only</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>IPARKIDQ</name>
-          <description>IPARKIDQ register</description>
+          <name>PIDOQ</name>
+          <description>PIDOQ register</description>
+          <addressOffset>0x000088</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>IPARKID</name>
+          <description>IPARKID register</description>
           <addressOffset>0x00008C</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>ID</name>
-              <description>ID field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IQ</name>
-              <description>IQ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>IPARKRAD</name>
-          <description>IPARKRAD register</description>
+          <name>IPARKIQ</name>
+          <description>IPARKIQ register</description>
+          <addressOffset>0x000090</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>IPARKSIN</name>
+          <description>IPARKSIN register</description>
           <addressOffset>0x000094</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>SIN</name>
-              <description>SIN field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>COS</name>
-              <description>COS field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>IPARKOAB</name>
-          <description>IPARKOAB register</description>
+          <name>IPARKCOS</name>
+          <description>IPARKCOS register</description>
+          <addressOffset>0x000098</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>IPARKOA</name>
+          <description>IPARKOA register</description>
           <addressOffset>0x00009C</addressOffset>
           <access>read-only</access>
-          <fields>
-            <field>
-              <name>OA</name>
-              <description>OA field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>OB</name>
-              <description>OB field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-only</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PWMIAB</name>
-          <description>PWMIAB register</description>
+          <name>IPARKOB</name>
+          <description>IPARKOB register</description>
+          <addressOffset>0x0000A0</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PWMIBV</name>
+          <description>PWMIBV register</description>
+          <addressOffset>0x0000A4</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PWMIA</name>
+          <description>PWMIA register</description>
           <addressOffset>0x0000A8</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>IA</name>
-              <description>IA field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>IB</name>
-              <description>IB field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
+        </register>
+        <register>
+          <name>PWMIB</name>
+          <description>PWMIB register</description>
+          <addressOffset>0x0000AC</addressOffset>
+          <access>read-write</access>
         </register>
         <register>
           <name>PWMMIN</name>
           <description>PWMMIN register</description>
           <addressOffset>0x0000B0</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>MIN</name>
-              <description>MIN field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>SAMP3</name>
-              <description>SAMP3 field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PWMDLY</name>
-          <description>PWMDLY register</description>
+          <name>PWMDLY1</name>
+          <description>PWMDLY1 register</description>
           <addressOffset>0x0000B4</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>SAMP1</name>
-              <description>SAMP1 field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>SAMP2</name>
-              <description>SAMP2 field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
+        </register>
+        <register>
+          <name>PWMDLY2</name>
+          <description>PWMDLY2 register</description>
+          <addressOffset>0x0000B8</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>PWMDLY3</name>
+          <description>PWMDLY3 register</description>
+          <addressOffset>0x0000BC</addressOffset>
+          <access>read-write</access>
         </register>
         <register>
           <name>PWMTIM</name>
           <description>PWMTIM register</description>
-          <addressOffset>0x0000BC</addressOffset>
+          <addressOffset>0x0000C0</addressOffset>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>PERIOD</name>
-              <description>PERIOD field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>DZ</name>
-              <description>DZ field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
         </register>
         <register>
-          <name>PWMTSP</name>
-          <description>PWMTSP register</description>
+          <name>PWMDZ</name>
+          <description>PWMDZ register</description>
           <addressOffset>0x0000C4</addressOffset>
-          <access>read-only</access>
-          <fields>
-            <field>
-              <name>POINT1</name>
-              <description>POINT1 field</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>POINT2</name>
-              <description>POINT2 field</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-              <access>read-only</access>
-            </field>
-          </fields>
+          <access>read-write</access>
         </register>
         <register>
-          <name>PWMTAD</name>
-          <description>PWMTAD register</description>
+          <name>PWMSP1</name>
+          <description>PWMSP1 register</description>
           <addressOffset>0x0000C8</addressOffset>
           <access>read-only</access>
         </register>
         <register>
-          <name>PWMTBD</name>
-          <description>PWMTBD register</description>
+          <name>PWMSP2</name>
+          <description>PWMSP2 register</description>
           <addressOffset>0x0000CC</addressOffset>
           <access>read-only</access>
         </register>
         <register>
-          <name>PWMTCD</name>
-          <description>PWMTCD register</description>
+          <name>PWMTDA</name>
+          <description>PWMTDA register</description>
           <addressOffset>0x0000D0</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PWMTDAN</name>
+          <description>PWMTDAN register</description>
+          <addressOffset>0x0000D4</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PWMTDB</name>
+          <description>PWMTDB register</description>
+          <addressOffset>0x0000D8</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PWMTDBN</name>
+          <description>PWMTDBN register</description>
+          <addressOffset>0x0000DC</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PWMTDC</name>
+          <description>PWMTDC register</description>
+          <addressOffset>0x0000E0</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PWMTDCN</name>
+          <description>PWMTDCN register</description>
+          <addressOffset>0x0000E4</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PWMSECT</name>
+          <description>PWMSECT register</description>
+          <addressOffset>0x0000E8</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PWMOVA</name>
+          <description>PWMOVA register</description>
+          <addressOffset>0x0000EC</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>PWMOVB</name>
+          <description>PWMOVB register</description>
+          <addressOffset>0x0000F0</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>IANGLE</name>
+          <description>IANGLE register</description>
+          <addressOffset>0x0000F4</addressOffset>
+          <access>read-write</access>
+        </register>
+        <register>
+          <name>OSIN</name>
+          <description>OSIN register</description>
+          <addressOffset>0x0000F8</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
+          <name>OCOS</name>
+          <description>OCOS register</description>
+          <addressOffset>0x0000FC</addressOffset>
           <access>read-only</access>
         </register>
       </registers>
