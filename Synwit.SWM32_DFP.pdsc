@@ -6,8 +6,8 @@
   <url>http://www.synwit.com/pack</url>
 
   <releases>
-    <release version="2.2.5" date="2026-3-4">
-      update SWM231 flash algorithm
+    <release version="2.2.6" date="2026-4-15">
+      add SWM221x8 support
     </release>
   </releases>
 
@@ -194,6 +194,13 @@
         <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
         <algorithm  name="Flash\SWM221xB.FLM"       start="0x00000000"  size="0x20000"                  default="1"/>
         <algorithm  name="Flash\SWM221_QSPI0_NOR.FLM"   start="0x70000000"  size="0x1000000"                default="1"/>
+      </device>
+
+      <!-- *************************  Device 'SWM221x8'  ***************************** -->
+      <device Dname="SWM221x8">
+        <memory     id="IROM1"                      start="0x00000000"  size="0x10000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\SWM221xB.FLM"       start="0x00000000"  size="0x10000"                  default="1"/>
       </device>
     </family>
 
